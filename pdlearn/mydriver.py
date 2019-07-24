@@ -159,7 +159,7 @@ class Mydriver:
         url = '端口URL'
         dict = {'image': base64,'type': '1001','length':4,}
         data = urllib.parse.urlencode(dict).encode('utf-8')
-        headers={'key':'密钥','Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'};
+        headers={'Authorization':'密钥','Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'};#(请求headers头有一些供应商是key)
         request = urllib.request.Request(url = url,data = data,headers = headers,method = 'POST')
         response = urllib.request.urlopen(request)
         content = response.read()
